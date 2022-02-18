@@ -1,0 +1,23 @@
+#!/bin/bash
+
+NAME=xastir
+TAG=xastir/kd2qar
+
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+
+CAPABILITIES=--cap-add=SYS_ADMIN
+
+ENV_VARS="--env=\"USER_ID=$(id -u)\" --env=\"USER_GID=$(id -g)\" --env=\"DISPLAY\"  --env=\"XAUTHORITY=${XAUTH}\"  "
+
+VOLUMES="--volume=${XSOCK}:${XSOCK} --volume=${XAUTH}:${XAUTH} --volume=/docker/xastir/${USER}:/home/${USER}  --volume=/run/user/$(id -u)/pulse:/run/pulse"
+
+ENV_INSTL_USER=" --env=\"BROWSER_BOX_USER=${USER}\" --env=\"BROWSER_BOX_REPO=${USER}\" "
+
+RUNIT="docker run -it --net host --rm --name=${NAME} ${ENV_VARS} ${VOLUMES} ${TAG} $(id -u) $(id -g) ${USER} ${DISPLAY}"
+
+echo ${RUNIT}
+
+${RUNIT}
+
+rm ${USER}/.xastir/xastir.pid

@@ -1,0 +1,28 @@
+#!/bin/bash
+set | grep L
+
+export MYUID=${1}
+export MYGID=${2}
+export MYLOGON=${3}
+export DISPLAY=${4}
+
+
+set | grep MY
+set | grep DISPLAY
+
+useradd --uid ${MYUID} -m -G root,disk --shell /bin/bash ${MYLOGON}
+
+#cp /.bash_aliases /home/${MYLOGON}
+#cp /vimrc /home/${MYLOGON}/.vimrc
+#echo 'PATH=/goroot/bin:${PATH}'>>/home/${MYLOGON}/.bashrc
+
+echo DISPLAY=${DISPLAY}
+
+ls -alh /usr/share/xastir/symbols/2x2.xbm
+
+su -p -c xastir  ${MYLOGON}
+
+
+#locale
+
+#xastir
