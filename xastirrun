@@ -6,7 +6,6 @@ export MYGID=${2}
 export MYLOGON=${3}
 export DISPLAY=${4}
 
-
 #set | grep MY
 #set | grep DISPLAY
 
@@ -22,7 +21,5 @@ ls -alh /usr/share/xastir/symbols/2x2.xbm
 
 su -p -c xastir  ${MYLOGON}
 
-
 #locale
-
 #xastir

@@ -1,5 +1,5 @@
 NAME = xastir
-TAG  = xastir/kd2qar
+TAG  = kd2qar/xastir
 
 DEVICE=/dev/ttyUSB0
 

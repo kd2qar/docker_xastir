@@ -1,7 +1,7 @@
 #!/bin/bash
 
 NAME=xastir
-TAG=xastir/kd2qar
+TAG=kd2qar/xastir
 
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
