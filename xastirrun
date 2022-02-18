@@ -1,5 +1,5 @@
 #!/bin/bash
-set | grep L
+#set | grep L
 
 export MYUID=${1}
 export MYGID=${2}
@@ -7,8 +7,8 @@ export MYLOGON=${3}
 export DISPLAY=${4}
 
 
-set | grep MY
-set | grep DISPLAY
+#set | grep MY
+#set | grep DISPLAY
 
 useradd --uid ${MYUID} -m -G root,disk --shell /bin/bash ${MYLOGON}
 

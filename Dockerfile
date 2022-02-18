@@ -33,7 +33,7 @@ RUN apt-get install -y libax25-dev
 WORKDIR /root
 RUN git clone https://github.com/Xastir/Xastir.git
 
-RUN  apt-get install -y libshp-dev libpcre3-dev
+RUN apt-get install -y libshp-dev libpcre3-dev
 RUN apt-get install -y shapelib
 RUN apt-get install -y libxpm-dev libxpm4
 RUN apt-get install -y libmagic1 libmagick-dev
@@ -108,22 +108,8 @@ RUN grep install- Makefile
 
 RUN ln -s /usr/local/share/xastir/ /usr/share/
 
-#RUN apt-get update && \
-#    apt-get -y install libasound2 alsa-utils pulseaudio && \
-#    apt-get -y autoremove && \
-#    apt-get purge && apt-get clean && \
-#    rm -rf /var/lib/apt/lists/* && \
-#    rm -rf /tmp/* /var/tmp/*  && \
-#    rm -rf /usr/share/doc/* && \
-#    rm -rf /usr/share/man/* ;
-#RUN arecord -l
-
-#WORKDIR /srv/direwolf
-
-#COPY * /srv/direwolf/
-
-#COPY * /usr/local/bin/
 COPY xastirrun /
+
 RUN chmod +x /xastirrun
 
 ENTRYPOINT ["/xastirrun"]
