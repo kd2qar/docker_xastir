@@ -3,6 +3,13 @@
 NAME=xastir
 TAG=kd2qar/xastir
 
+if [ "x${DISPLAY}" =  "x" ]; then
+  echo "set display"
+  DISPLAY=:0.0
+fi
+
+/data/record/qsy  144390000 FM 16000
+
 XSOCK=/tmp/.X11-unix
 XAUTH=/tmp/.docker.xauth
 
