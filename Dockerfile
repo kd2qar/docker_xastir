@@ -1,6 +1,3 @@
-#FROM raspbian/stretch as build
-#FROM debian:buster-slim as build
-#FROM debian:stretch-slim as build
 FROM debian:bullseye-slim
 
 LABEL maintainer="KD2QAR@gmail.com"
@@ -89,7 +86,7 @@ RUN mkdir build
 WORKDIR /root/Xastir
 RUN  ./bootstrap.sh
 
-run touch fff
+#run touch fff
 
 RUN ./configure
 
@@ -101,7 +98,7 @@ RUN make
 #RUN ls -alh
 #RUN make -j4
 RUN make install
-RUN touch xxx
+#RUN touch xxx
 RUN make install-data
 RUN grep install- Makefile
 #RUN make install-MapData
